@@ -5,12 +5,12 @@ class switch(object):
     def __init__(self, value):
         self.value = value
         self.fall = False
-
+    
     def __iter__(self):
         """Return the match method once, then stop"""
         yield self.match
         raise StopIteration
-
+    
     def match(self, *args):
         """Indicate whether or not to enter a case suite"""
         if self.fall or not args:
@@ -25,7 +25,7 @@ def caesar_cipher():
     import sys
     contents = ""
     print("Please Enter The Text (Leave a line and click Ctrl+D when you finish your input")
-    for line in sys.stdin:    
+    for line in sys.stdin:
         contents += line
     print("-------------------Caesar Cipher--------------------")
     new = [""] * 25
@@ -46,9 +46,9 @@ def caesar_cipher():
                 new[num] += contents[i]
                 continue
 
-    
-    for abc in range(0, 25):
-        print("+" + str(abc + 1) + "\t" + new[abc].replace("\n", "\n\t"))
+
+for abc in range(0, 25):
+    print("+" + str(abc + 1) + "\t" + new[abc].replace("\n", "\n\t"))
     main()
 
 def base64():
@@ -68,6 +68,7 @@ def main():
         if case(): # default, could also just omit condition or 'if True'
             print("Error!")
             main()
-            # No need to break here, it'll stop anyway
+# No need to break here, it'll stop anyway
 
 main()
+
